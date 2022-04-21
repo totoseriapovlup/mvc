@@ -11,4 +11,8 @@ class Index
     public function create(){
         echo 'index controller create method';
     }
+
+    public function store(){
+        echo 'index controller store method';
+    }
 }
