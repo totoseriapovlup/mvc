@@ -1,13 +1,14 @@
 <?php
 
+
 namespace Controllers;
 
 use Core\View;
 
-class Index extends AbstractController
+class Note extends AbstractController
 {
     public function index()
     {
-        $this->view->render('index_index_page');
+        // TODO: Implement index() method.
     }
 }
