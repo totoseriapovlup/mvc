@@ -27,7 +27,11 @@ class Route
         if(!method_exists($controller, $action)){
             self::notFound();
         }
-        $controller->$action();
+        try{
+            $controller->$action();
+        }catch (Exception $e){
+            exit($e->getMessage());
+        }
     }
 
     static public function notFound(){
