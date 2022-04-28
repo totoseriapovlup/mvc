@@ -4,6 +4,8 @@
 namespace Models;
 
 
+use http\Encoding\Stream;
+
 class NoteModel
 {
     /**
@@ -29,6 +31,16 @@ class NoteModel
         $sql = "SELECT * FROM notes;";
         $result = $this->db->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /**
+     * add new note
+     * @param string $noteText
+     * @return bool
+     */
+    public function add(string $noteText){
+        $sql = "INSERT INTO notes (text) VALUES ('$noteText');";
+        return $this->db->query($sql);
     }
 
 }
